@@ -113,7 +113,7 @@ public class Salida {
     }
 
     public static void listarGrupos(Grupo[] grupos) {
-        //TODO: listarGrupos
+        //DONE: listarGrupos
         for (int i = 0; i < grupos.length; i++) {
             System.out.println(i+1 + ". " + grupos[i].getNombre() + " (" +
                     grupos[i].getTamano() + ")");
@@ -121,7 +121,10 @@ public class Salida {
     }
 
     public static void listarPersonas(Persona[] personas) {
-        //TODO: listarPersonas (1)
+        //DONE: listarPersonas (1)
+        for (int i = 0; i < personas.length; i++) {
+            System.out.println((i+1) + ". " + personas[i].toString());
+        }
     }
 
     public static void listarPersonas(Persona[] personas, int idx) {
