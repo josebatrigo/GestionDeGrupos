@@ -3,6 +3,8 @@ package com.masanz.io;
 import com.masanz.logic.Grupo;
 import com.masanz.logic.Persona;
 
+import java.sql.SQLOutput;
+
 public class Salida {
 
     public static void info(String msg) {
@@ -112,6 +114,10 @@ public class Salida {
 
     public static void listarGrupos(Grupo[] grupos) {
         //TODO: listarGrupos
+        for (int i = 0; i < grupos.length; i++) {
+            System.out.println(i+1 + ". " + grupos[i].getNombre() + " (" +
+                    grupos[i].getTamano() + ")");
+        }
     }
 
     public static void listarPersonas(Persona[] personas) {
