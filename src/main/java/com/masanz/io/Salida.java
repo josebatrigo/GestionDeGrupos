@@ -123,12 +123,21 @@ public class Salida {
     public static void listarPersonas(Persona[] personas) {
         //DONE: listarPersonas (1)
         for (int i = 0; i < personas.length; i++) {
+            if (personas[i] == null) {
+                return;
+            }
             System.out.println((i+1) + ". " + personas[i].toString());
         }
     }
 
     public static void listarPersonas(Persona[] personas, int idx) {
         //TODO: listarPersonas (2)
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i] == null) {
+                return;
+            }
+            System.out.println((idx + i) + ". " + personas[i].toString());
+        }
     }
 
     public static void pintar(Persona[][] personas) {
