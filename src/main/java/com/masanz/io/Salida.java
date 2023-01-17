@@ -142,6 +142,17 @@ public class Salida {
 
     public static void pintar(Persona[][] personas) {
         //TODO: pintar
+        for (int i = personas.length - 1; i >= 0  ; i--) {
+            for (int j = 0; j < personas[i].length; j++) {
+                if (personas[i][j] == null) {
+                    System.out.print("    ");
+                }
+                else {
+                    System.out.print(personas[i][j].getSiglas() + "  ");
+                }
+            }
+            System.out.println();
+        }
     }
 
 }
