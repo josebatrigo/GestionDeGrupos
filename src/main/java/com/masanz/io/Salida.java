@@ -131,7 +131,7 @@ public class Salida {
     }
 
     public static void listarPersonas(Persona[] personas, int idx) {
-        //TODO: listarPersonas (2)
+        //DONE: listarPersonas (2)
         for (int i = 0; i < personas.length; i++) {
             if (personas[i] == null) {
                 return;
@@ -141,7 +141,7 @@ public class Salida {
     }
 
     public static void pintar(Persona[][] personas) {
-        //TODO: pintar
+        //DONE: pintar
         for (int i = personas.length - 1; i >= 0  ; i--) {
             for (int j = 0; j < personas[i].length; j++) {
                 if (personas[i][j] == null) {
@@ -154,5 +154,4 @@ public class Salida {
             System.out.println();
         }
     }
-
 }
