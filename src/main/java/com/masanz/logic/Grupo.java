@@ -79,7 +79,7 @@ public class Grupo {
     }
 
     public int getCuantosSuspendidosHay(){
-        //TODO: getCuantosSuspendidosHay
+        //DONE: getCuantosSuspendidosHay
         int suspendidos = 0;
         for (int i = 0; i < personas.length; i++) {
             if (personas[i].getPuntos() < 50) {
@@ -90,7 +90,7 @@ public class Grupo {
     }
 
     public Persona[] getPersonasPorApellidos() {
-        //TODO: getPersonasPorApellidos
+        //DONE: getPersonasPorApellidos
         for (int i = 0; i < tamano; i++) {
             int posmin = i;
             for (int j = i; j < tamano; j++) {
@@ -113,6 +113,16 @@ public class Grupo {
      */
     public static void insercionDirectaPorPuntosCreciente(Persona[] a, int t,  Persona p) {
         //TODO: insercionDirectaPorPuntosCreciente
+        int j = 0;
+        for (int i = 0; i < t; i++) {
+            if (a[i].getPuntos() < p.getPuntos()) {
+                j++;
+            }
+        }
+        for (int i = t; i >= j ; i--) {
+            a[i + 1] = a[i];
+        }
+        a[j] = p;
     }
 
     public Persona[] getPersonasSuspendidas() {
