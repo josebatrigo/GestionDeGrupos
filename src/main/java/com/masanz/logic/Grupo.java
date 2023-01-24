@@ -78,7 +78,13 @@ public class Grupo {
 
     public int getCuantosSuspendidosHay(){
         //TODO: getCuantosSuspendidosHay
-        return 0;
+        int suspendidos = 0;
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getPuntos() < 50) {
+                suspendidos++;
+            }
+        }
+        return suspendidos;
     }
 
     public Persona[] getPersonasPorApellidos() {
