@@ -127,7 +127,14 @@ public class Grupo {
 
     public Persona[] getPersonasSuspendidas() {
         //TODO: getPersonasSuspendidas
-        return null;
+        Persona[] suspendidos = new Persona[getCuantosSuspendidosHay()];
+        int pos = 0;
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getPuntos() < 50) {
+                insercionDirectaPorPuntosCreciente(suspendidos, pos++, personas[i]);
+            }
+        }
+        return suspendidos;
     }
 
     /**
