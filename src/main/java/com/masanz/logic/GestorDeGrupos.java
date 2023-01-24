@@ -147,12 +147,11 @@ public class GestorDeGrupos {
         //TODO: getPersonasSitios
         Grupo g = getGrupo(grupo);
         Persona[][] sitios = new Persona[g.getFilas()][g.getColumnas()];
-        for (int i = 0; i < getPersonasPorApellido(grupo).length; i++) {
-           sitios[getPersonasPorApellido(grupo)[i].getPosicion().getFila()]
-                   [getPersonasPorApellido(grupo)[i].getPosicion().getColumna()]
-                   =  getPersonasPorApellido(grupo)[i];
+        Persona[] p = g.getPersonasPorApellidos();
+        for (int i = 0; i < p.length; i++) {
+            sitios[p[i].getPosicion().getFila()][p[i].getPosicion().getColumna()] = p[i];
         }
-        return null;
+        return sitios;
     }
 
 }
