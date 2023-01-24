@@ -81,7 +81,7 @@ public class Grupo {
     public int getCuantosSuspendidosHay(){
         //DONE: getCuantosSuspendidosHay
         int suspendidos = 0;
-        for (int i = 0; i < personas.length; i++) {
+        for (int i = 0; i < tamano; i++) {
             if (personas[i].getPuntos() < 50) {
                 suspendidos++;
             }
