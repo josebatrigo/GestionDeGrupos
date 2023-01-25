@@ -231,7 +231,7 @@ public class Grupo {
     public boolean del(int idx) {
         //TODO: del
         for (int i = idx - 1; i < tamano; i++) {
-            personas[idx - 1] = personas[idx + 1];
+            personas[i] = personas[i + 1];
         }
         tamano--;
         return true;
