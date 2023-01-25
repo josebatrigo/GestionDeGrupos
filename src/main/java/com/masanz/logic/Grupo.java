@@ -146,6 +146,17 @@ public class Grupo {
      */
     public static void ordenacionPorSeleccionDirectaDePuntosDescendente(Persona[] a) {
         //TODO: ordenacionPorSeleccionDirectaDePuntosDescendente
+        for (int i = 0; i < a.length; i++) {
+            int posmin = i;
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[j].getPuntos() > a[posmin].getPuntos()) {
+                    posmin = j;
+                }
+            }
+            Persona aux = a[posmin];
+            a[posmin] = a[i];
+            a[i] = aux;
+        }
     }
 
     public Persona[] getPersonasOrdenadasPorPuntos() {
