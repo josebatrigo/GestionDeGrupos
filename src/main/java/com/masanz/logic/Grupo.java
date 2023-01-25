@@ -145,7 +145,7 @@ public class Grupo {
      *          distinto de null. Al final estarán ordenados por la puntuación de más a menos.
      */
     public static void ordenacionPorSeleccionDirectaDePuntosDescendente(Persona[] a) {
-        //TODO: ordenacionPorSeleccionDirectaDePuntosDescendente
+        //DONE: ordenacionPorSeleccionDirectaDePuntosDescendente
         for (int i = 0; i < a.length; i++) {
             int posmin = i;
             for (int j = i + 1; j < a.length; j++) {
@@ -178,7 +178,23 @@ public class Grupo {
      */
     public int busquedaDicotomica(String txt) {
         //TODO: busquedaDicotomica
-        return 0;
+        boolean encontrado = false;
+        int izquierda = 0;
+        int derecha = personas.length - 1;
+        int mitad = 0;
+        while (izquierda <= derecha && !encontrado) {
+            mitad = (izquierda + derecha / 2);
+            if ((personas[mitad].getApellidosNombre().compareTo(txt) == 0)) {
+                encontrado = true;
+            }
+            else if (personas[mitad].getApellidosNombre().compareTo(txt) > 0) {
+                derecha = mitad -1;
+            }
+            else {
+                izquierda = mitad + 1;
+            }
+        }
+        return mitad;
     }
 
     /**
