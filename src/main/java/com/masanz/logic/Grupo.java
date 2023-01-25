@@ -218,7 +218,10 @@ public class Grupo {
      */
     public Persona getPersona(int idx) {
         //DONE: getPersona
-        return getPersonasPorApellidos()[idx + 1];
+        if (idx - 1 < 0 || idx - 1 >= tamano) {
+            return null;
+        }
+        return getPersonasPorApellidos()[idx - 1];
     }
 
     /**
@@ -227,6 +230,10 @@ public class Grupo {
      */
     public boolean del(int idx) {
         //TODO: del
+        for (int i = idx - 1; i < tamano; i++) {
+            personas[idx - 1] = personas[idx + 1];
+        }
+        tamano--;
         return true;
     }
 
