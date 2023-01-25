@@ -112,24 +112,25 @@ public class Grupo {
      * @param p persona a insertar con una cantidad de puntos
      */
     public static void insercionDirectaPorPuntosCreciente(Persona[] a, int t,  Persona p) {
-        //TODO: insercionDirectaPorPuntosCreciente
-        int j = 0;
-        for (int i = 0; i < t; i++) {
-            if (a[i].getPuntos() < p.getPuntos()) {
-                j++;
+        //DONE: insercionDirectaPorPuntosCreciente
+        a[t++] = p;
+        Persona aux;
+        int j;
+        for (int i = 1; i < t; i++) {
+            aux = a[i];
+            j = i - 1;
+            while (j >= 0 && aux.getPuntos() < a[j].getPuntos()) {
+                a[j + 1] = a[j--];
             }
+            a[j + 1] = aux;
         }
-        for (int i = t; i >= j ; i--) {
-            a[i + 1] = a[i];
-        }
-        a[j] = p;
     }
 
     public Persona[] getPersonasSuspendidas() {
-        //TODO: getPersonasSuspendidas
+        //DONE: getPersonasSuspendidas
         Persona[] suspendidos = new Persona[getCuantosSuspendidosHay()];
         int pos = 0;
-        for (int i = 0; i < personas.length; i++) {
+        for (int i = 0; i < tamano; i++) {
             if (personas[i].getPuntos() < 50) {
                 insercionDirectaPorPuntosCreciente(suspendidos, pos++, personas[i]);
             }
