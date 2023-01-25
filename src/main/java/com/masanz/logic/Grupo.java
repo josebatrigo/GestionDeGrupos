@@ -217,8 +217,8 @@ public class Grupo {
      * @return persona o null si no existe
      */
     public Persona getPersona(int idx) {
-        //TODO: getPersona
-        return null;
+        //DONE: getPersona
+        return getPersonasPorApellidos()[idx + 1];
     }
 
     /**
